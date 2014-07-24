@@ -74,11 +74,9 @@
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="LICENSE" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BattleNET.dll" />
     <None Include="config.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
