@@ -52,23 +52,7 @@ namespace Arma2Blacklist
 
         static void beMessageParser_ChatReceived(BeMessageChat msg)
         {
-            Console.WriteLine(String.Format("[{0}] {1}: {2}", msg.type, msg.player_name, msg.message));
-            try
-            {
-                using (WebClient webclient = new WebClient())
-                {
-                    NameValueCollection postparams = new NameValueCollection();
-                    postparams.Add("player", msg.player_name);
-                    postparams.Add("type", msg.type);
-                    postparams.Add("message", msg.message);
-                    postparams.Add("server", serverName);
-                    webclient.UploadValues(Settings.GetValue("misc", "chaturl"), "POST", postparams);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error Adding Chat: " + ex.Message);
-            }
+            Console.WriteLine(String.Format("[{0}] {1}: {2}", msg.type, 
         }
 
         static void beMessageParser_KickReceived(BeMessageKick msg)
